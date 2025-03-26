@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 12px; /* Ini buat ngecilin font */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #ddd;
+}
