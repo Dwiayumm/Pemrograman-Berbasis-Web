@@ -1,0 +1,17 @@
+
+/* Perbesar ukuran input */
+input {
+    font-size: 24px;  /* Ukuran teks lebih besar */
+    padding: 12px;  /* Tambah ruang dalam */
+    width: 90%;  /* Lebar hampir penuh */
+    max-width: 500px; /* Biar nggak terlalu besar di layar besar */
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    text-align: center; /* Biar ekspresi di tengah */
+}
+
+
+/* Efek hover */
+button:hover {
+    background-color: #45a049;
+}
