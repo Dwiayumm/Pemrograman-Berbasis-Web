@@ -1,24 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator</title>
+    <title>Project UTS Praktek</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Kalkulator Sederhana</h2>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Take a Chance with Me!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prestasi">Prestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-   <!-- Input untuk operasi math -->
-    <input type="text" id="Operasi" placeholder="Masukkan operasi (contoh: 10+5-2*3)">
-
-    <!-- Tombol hitung -->
-    <button onclick="hitung()">Hitung</button>
-
-    <!-- Tempat hasilnya disini -->
-    <h3>Hasil: <span id="result">0</span></h3>
+    <section id="beranda" class="profile-section text-center">
+        <div class="profile-photo">
+            <img src="Foto dwi.jpg" class="default-photo">
+            <img src="foto dwi 2.jpg" class="hover-photo">
+        </div>
+        <h1 class="profile-name">Dwi Ayu Meilinda Maharani</h1>
+        <p class="profile-description">Undergraduate Student in Information Systems at Universitas Singaperbangsa Karawang | Data and Technology Enthusiast | Public Communication and Journalism</p>
+    </section>
     
-    <!-- Menghubung ke file JS external -->
-     <script src="script.js"></script>
+
+        <!-- Halaman Portfolio -->
+        <section id="portfolio" class="mb-5">
+            <h2>Portfolio</h2>
+            <ul>
+                <li>Sistem Pendeteksi Kebocoran Gas Realtime</li>
+                <li>Database Perpustakaan Menggunakan XAMPP</li>
+                <li>Sistem Manajemen Perpustakaan Berbasis Web</li>
+            </ul>
+        </section>
+
+        <!-- Halaman Prestasi -->
+        <section id="prestasi" class="mb-5">
+            <h2>Prestasi</h2>
+            <ul>
+                <li>Wartawan Buletin LPM Unsika</li>
+                <li>Master of Ceremony Pada Acara Seminar Jurnalistik Nasional 2024</li>
+                <li>Master of Ceremony Pada Acara Education Fair 2024</li>
+            </ul>
+        </section>
+
+        <!-- Halaman Contact -->
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: dwiayumm@gmail.com</li>
+                <li>Telepon: +62 896-3343-0801</li>
+                <li>LinkedIn: 
+                    <a href="https://www.linkedin.com/in/dwi-ayu-meilinda-maharani-341290331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        LinkedIn Saya
+                    </a>
+                </li>
+            </ul>
+            <div class="mt-4">
+                <a href="#beranda" class="btn btn-primary">Kembali ke Beranda</a>
+            </div>
+        </section>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

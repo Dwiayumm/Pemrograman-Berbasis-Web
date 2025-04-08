@@ -1,17 +1,197 @@
+/* Styling global */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Perbesar ukuran input */
-input {
-    font-size: 24px;  /* Ukuran teks lebih besar */
-    padding: 12px;  /* Tambah ruang dalam */
-    width: 90%;  /* Lebar hampir penuh */
-    max-width: 500px; /* Biar nggak terlalu besar di layar besar */
-    border: 2px solid #aaa;
-    border-radius: 10px;
-    text-align: center; /* Biar ekspresi di tengah */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding-top: 60px;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.nav-link {
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #00ffcc;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+.profile-name {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.profile-description {
+    font-size: 20px;
+    font-weight: 300;
+    color: #ddd;
 }
 
 
-/* Efek hover */
-button:hover {
-    background-color: #45a049;
+.btn-primary:hover {
+    background-color: #00ffcc;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sticky Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease-in-out;
+    padding: 10px 20px;
+}
+
+/* Efek Hover Navbar */
+.nav-link {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #00ffcc;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #00ffcc;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Layout */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Portfolio & Prestasi */
+#portfolio, #prestasi, #contact {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-photo {
+    position: relative; /* Menjadikan container sebagai acuan posisi */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden; /* Pastikan gambar tetap dalam lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-photo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar tetap proporsional */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-photo {
+    opacity: 0;
+}
+
+.profile-photo:hover .hover-photo {
+    opacity: 1;
+}
+
+.profile-photo:hover .default-photo {
+    opacity: 0;
+}
+
+.profile-description {
+    font-size: 20px;
+    font-weight: 300;
+    color: #ddd;
+    max-width: 700px; /* membatasi lebar maksimum teks */
+    margin: 0 auto;   /* membuat teks tetap di tengah */
+    line-height: 1.6; /* agar lebih nyaman dibaca */
 }

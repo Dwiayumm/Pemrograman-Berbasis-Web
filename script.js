@@ -1,50 +1,34 @@
-// Fungsi untuk mengevaluasi operasi matematika dengan aman
-const hitung = () => {
-    let inputOperasi = document.getElementById("Operasi").value;
+function showPage(pageId) {
+    // Sembunyikan semua halaman
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
 
-    // Validasi: hanya angka dan operator yang diperbolehkan
-    if (!/^[0-9+\-*/.%() ]+$/.test(inputOperasi)) {
-        alert("Operasi tidak valid! Gunakan angka dan operator matematika (+-*/%) saja bro.");
-        return;
+    // Tampilkan halaman yang dipilih
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
     }
 
-    try {
-        // Ubah input menjadi array angka dan operator
-        let angkaDanOperator = inputOperasi.match(/[0-9]+|[\+\-\*\/%]/g);
+}
 
-        if (!angkaDanOperator) throw new Error("Ekspresi kosong!");
+document.querySelectorAll('.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+            top: targetElement.offsetTop - 60,
+            behavior: 'smooth'
+        });
+    });
+});
 
-        // Ambil operator pertama sebagai patokan
-        let operator = angkaDanOperator.find(op => ["+", "-", "*", "/", "%"].includes(op));
+const profilePic = document.querySelector(".profile-photo");
 
-        if (!operator) throw new Error("Operator tidak ditemukan!");
+profilePic.addEventListener("mouseover", function () {
+    this.src = "image/foto dwi 2.jpg"; // Gambar saat hover
+});
 
-        // Ambil angka sebagai array tanpa operator
-        let numbers = angkaDanOperator.filter(num => !["+", "-", "*", "/", "%"].includes(num)).map(Number);
-
-        // Panggil fungsi kalkulator
-        let hasil = kalkulator(operator, ...numbers);
-
-        document.getElementById("result").innerText = hasil;
-    } catch (error) {
-        document.getElementById("result").innerText = "Error!";
-    }
-};
-
-// Fungsi kalkulator dengan spread operator
-const kalkulator = (operator, ...numbers) => {
-    switch (operator) {
-        case "+":
-            return numbers.reduce((a, b) => a + b, 0);
-        case "-":
-            return numbers.reduce((a, b) => a - b);
-        case "*":
-            return numbers.reduce((a, b) => a * b, 1);
-        case "/":
-            return numbers.reduce((a, b) => a / b);
-        case "%":
-            return numbers.reduce((a, b) => a % b);
-        default:
-            return "Operator tidak valid! Gunakan +, -, *, /, atau %.";
-    }
-};
+profilePic.addEventListener("mouseout", function () {
+    this.src = "image/Foto dwi.jpg"; // Kembali ke gambar awal
+});
